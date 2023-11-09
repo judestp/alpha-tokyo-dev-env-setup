@@ -12,8 +12,10 @@ main() {
         installNodeJS &&
         installEnvironmentPackages &&
         cloneRepository &&
-        createEnvLocal &&
+        createEnvLocal_Server &&
         generateCerts &&
+        setEnvs &&
+        replaceMockWithAPI &&
         dockerize &&
         installProjectPackages &&
         removeTemporaryFiles &&
@@ -48,7 +50,7 @@ cloneRepository() {
     git clone git@github.com:Pestalozzitech/alpha-tokyo.git
 }
 
-createEnvLocal() {
+createEnvLocal_Server() {
     local fileName=".env.local"
     local content=$(
         cat <<EOF
@@ -88,7 +90,7 @@ generateCerts() {
     mkcert "*.alpha-pestalozzi.test"
 }
 
-dockerize() {
+setEnvs() {
     cd ~/$PROJECT_DIRECTORY
 
     #==========CUSTOM==========#
@@ -104,6 +106,25 @@ dockerize() {
     cp env.template .env
 
     cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
+}
+
+replaceMockWithAPI() {
+    cd ~/$PROJECT_DIRECTORY/packages/frontend/student
+
+    local stringToRemove="mock/v1"
+    local replacement="api/v1"
+
+    # Create a temporary file for editing
+    local tempFile="tempfile.txt"
+
+    # Use sed to remove the specified string from the file and save the stringToRemove in the temp file
+    sed -e "s%\($stringToRemove\)%$replacement%g" ".env.local" >"$tempFile"
+    # Replace the original file with the temp file
+    mv "$tempFile" ".env.local"
+}
+
+dockerize() {
+    cd ~/$PROJECT_DIRECTORY
 
     docker compose up -d --build
 }
