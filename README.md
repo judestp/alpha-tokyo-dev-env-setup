@@ -80,7 +80,7 @@ Terminal: `Ubuntu`
   
 Command:  
 ```sh
-curl -o script.sh https://raw.githubusercontent.com/judestp/alpha-tokyo-dev-env/main/script.sh && sh script.sh
+curl -o script.sh https://raw.githubusercontent.com/judestp/alpha-tokyo-dev-env-setup/main/script.sh && sh script.sh
 ```
 
 ## "asdf: command not found"
