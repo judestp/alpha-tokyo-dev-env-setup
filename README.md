@@ -78,7 +78,7 @@ Terminal: `Ubuntu`
   
 Command:  
 ```sh
-curl -o script.sh https://gist.githubusercontent.com/judigot/7399e8548eb1d01abba102cdcf2c540e/raw/e0bb8e2ee0fd4fba7f168ea63d12930e1e4fb63d/script.sh && sh script.sh
+curl -o script.sh https://raw.githubusercontent.com/judestp/alpha-tokyo-dev-env/main/script.sh && sh script.sh
 ```
 
 ## "asdf: command not found"
