@@ -17,7 +17,6 @@ main() {
         dockerize &&
         installProjectPackages &&
         removeTemporaryFiles &&
-        
         read -p "Press Enter to exit..."
 }
 
@@ -99,7 +98,7 @@ dockerize() {
 
     cp packages/frontend/school/env.template packages/frontend/school/.env.local
     cp packages/frontend/student/env.template packages/frontend/student/.env.local
-    cp packages/backend/server/env.local.template packages/backend/server/.env.local
+    # cp packages/backend/server/env.local.template packages/backend/server/.env.local
     cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
     cp packages/backend/server/env.test.template packages/backend/server/.env.test
     cp env.template .env
@@ -120,7 +119,7 @@ installProjectPackages() {
     #==========CUSTOM==========#
 
     yarn set version $(cat package.json | jq -r .engines.yarn)
-    
+
     cd ~/$PROJECT_DIRECTORY/packages/frontend/student && yarn --immutable
     cd ~/$PROJECT_DIRECTORY/packages/frontend/school && yarn --immutable
     cd ~/$PROJECT_DIRECTORY/packages/frontend/board && yarn --immutable
@@ -131,7 +130,8 @@ installProjectPackages() {
     #==========CUSTOM==========#
     cd ~/$PROJECT_DIRECTORY/packages/frontend/admin && yarn --immutable
     # cd packages/backend/server && yarn --immutable
-    yarn db:migrate:local
+    cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
+    # yarn db:migrate:local
     #==========CUSTOM==========#
 
     # Discard .yarnrc changes
