@@ -12,6 +12,7 @@ main() {
         installNodeJS &&
         installEnvironmentPackages &&
         cloneRepository &&
+        createEnvLocal &&
         generateCerts &&
         dockerize &&
         installProjectPackages &&
