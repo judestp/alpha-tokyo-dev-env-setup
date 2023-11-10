@@ -19,6 +19,7 @@ main() {
         dockerize &&
         installProjectPackages &&
         removeTemporaryFiles &&
+
         read -p "Press Enter to exit..."
 }
 
@@ -51,6 +52,8 @@ cloneRepository() {
 }
 
 createEnvLocal_Server() {
+    cd ~
+
     local fileName=".env.local"
     local content=$(
         cat <<EOF
@@ -150,9 +153,8 @@ installProjectPackages() {
 
     #==========CUSTOM==========#
     cd ~/$PROJECT_DIRECTORY/packages/frontend/admin && yarn --immutable
-    # cd packages/backend/server && yarn --immutable
     cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
-    # yarn db:migrate:local
+    yarn db:migrate:local
     #==========CUSTOM==========#
 
     # Discard .yarnrc changes
