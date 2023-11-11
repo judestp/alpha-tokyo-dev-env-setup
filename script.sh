@@ -60,7 +60,7 @@ createEnvLocal_Server() {
 # prisma ローカルのホスト側から実行時
 CACHE_URL=redis://localhost:6379
 DB_WRITER_URL=postgresql://root:password@localhost:5432/alpha-tokyo?schema=public
-DB_READER_URL=postgresql://root:pa ssword@localhost:5432/alpha-tokyo?schema=public
+DB_READER_URL=postgresql://root:password@localhost:5432/alpha-tokyo?schema=public
 DB_WRITER_DB=alpha-tokyo
 DB_WRITER_HOST=localhost
 DB_WRITER_PORT=5432
