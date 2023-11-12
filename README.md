@@ -1,7 +1,7 @@
-# Alpha Tokyo Development Environment Setup
+# Alpha Tokyo Development Environment Setup (WSL 2)
 
 ## Required Programs
-- WSL
+- WSL 2
 - Docker
 
 
