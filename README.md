@@ -53,6 +53,15 @@ Command:
 clear && echo -e "Copy and paste the line below to your hosts file located in \e[33mC:/Windows/System32/drivers/etc/hosts:\n\n\e[32m$(cat /etc/resolv.conf | grep nameserver | cut -d ' ' -f 2) tokyo.alpha-pestalozzi.test\n\e[0m"
 ```
 
+## Configure Git Credentials
+Terminal: `Ubuntu`  
+  
+Command:  
+```sh
+git config --global user.name "example-username"
+git config --global user.email "example@gmail.com"
+```
+
 ## SSH Key Generation for Github
 Copy & paste the generated SSH key to your GitHub account
 Terminal: `Ubuntu`  
@@ -88,12 +97,3 @@ curl -o script.sh https://raw.githubusercontent.com/judestp/alpha-tokyo-dev-env-
   Once you encounter `asdf: command not found`, close the terminal and rerun the script
 
   *restart the terminal after ASDF installation then rerun the script.sh to continue
-
-## Configure Git Credentials
-Terminal: `Ubuntu`  
-  
-Command:  
-```sh
-git config --global user.name "example-username"
-git config --global user.email "example@gmail.com"
-```
