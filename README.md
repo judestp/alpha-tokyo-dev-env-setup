@@ -5,7 +5,7 @@
 - Docker
 
 
-## Enable WSL (Windows Subsystem for Linux)
+## Enable WSL 2 (Windows Subsystem for Linux)
 Open PowerShell as Administrator (Start menu > PowerShell > right-click > Run as Administrator) and enter this command:  
   
 Terminal: `PowerShell`  
