@@ -18,8 +18,8 @@ main() {
         replaceMockWithAPI &&
         dockerize &&
         # installProjectPackages &&
+        setupDB &&
         removeTemporaryFiles &&
-
         read -p "Press Enter to exit..."
 }
 
@@ -159,6 +159,13 @@ installProjectPackages() {
 
     # Discard .yarnrc changes
     git stash -u
+}
+
+setupDB() {
+    #==========CUSTOM==========#
+    cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
+    yarn db:migrate:local
+    #==========CUSTOM==========#
 }
 
 removeTemporaryFiles() {
