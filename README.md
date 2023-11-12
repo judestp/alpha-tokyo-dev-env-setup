@@ -88,3 +88,12 @@ curl -o script.sh https://raw.githubusercontent.com/judestp/alpha-tokyo-dev-env-
   Once you encounter `asdf: command not found`, close the terminal and rerun the script
 
   *restart the terminal after ASDF installation then rerun the script.sh to continue
+
+## Configure Git Credentials
+Terminal: `Ubuntu`  
+  
+Command:  
+```sh
+git config --global user.name "example-username"
+git config --global user.email "example@gmail.com"
+```
