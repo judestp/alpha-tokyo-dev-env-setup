@@ -17,7 +17,7 @@ main() {
         setEnvs &&
         replaceMockWithAPI &&
         dockerize &&
-        installProjectPackages &&
+        # installProjectPackages &&
         removeTemporaryFiles &&
 
         read -p "Press Enter to exit..."
