@@ -12,8 +12,8 @@ main() {
         installNodeJS &&
         installEnvironmentPackages &&
         cloneRepository &&
-        createEnvLocal_Server &&
         generateCerts &&
+        createEnvLocal_Server &&
         setEnvs &&
         replaceMockWithAPI &&
         dockerize &&
@@ -107,12 +107,11 @@ setEnvs() {
 
     cp packages/frontend/school/env.template packages/frontend/school/.env.local
     cp packages/frontend/student/env.template packages/frontend/student/.env.local
-    # cp packages/backend/server/env.local.template packages/backend/server/.env.local
-    cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
+    cp packages/frontend/board/env.template packages/frontend/board/.env.local
+    cp packages/backend/server/env.local.template packages/backend/server/.env.local
     cp packages/backend/server/env.test.template packages/backend/server/.env.test
+    # cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
     cp env.template .env
-
-    cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
 }
 
 replaceMockWithAPI() {
