@@ -166,7 +166,6 @@ installProjectPackages() {
 
 removeTemporaryFiles() {
     rm ~/.env.local
-    rm ~/script.sh
 }
 
 main
