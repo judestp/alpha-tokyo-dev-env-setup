@@ -19,7 +19,7 @@ main() {
         dockerize &&
         installProjectPackages &&
         setupDB &&
-        removeTemporaryFiles &&
+        cleanup &&
         read -p "Press Enter to exit..."
 }
 
@@ -165,7 +165,7 @@ setupDB() {
     yarn db:migrate:local
 }
 
-removeTemporaryFiles() {
+cleanup() {
     rm ~/.env.local
     rm script.sh
 
