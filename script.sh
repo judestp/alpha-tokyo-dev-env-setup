@@ -166,6 +166,8 @@ setupDB() {
 }
 
 cleanup() {
+    cd ~
+
     rm ~/.env.local
     rm script.sh
 
