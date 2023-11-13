@@ -158,7 +158,6 @@ installProjectPackages() {
     #==========CUSTOM==========#
     cd ~/$PROJECT_DIRECTORY/packages/frontend/admin && yarn --immutable
     cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
-    yarn db:migrate:local
     #==========CUSTOM==========#
 
     # Discard .yarnrc changes
