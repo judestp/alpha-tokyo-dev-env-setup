@@ -161,7 +161,8 @@ installProjectPackages() {
 }
 
 setupDB() {
-    cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
+    cd ~/$PROJECT_DIRECTORY/packages/backend/server
+    yarn db:migrate:local
 }
 
 removeTemporaryFiles() {
