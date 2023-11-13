@@ -110,7 +110,7 @@ setEnvs() {
     cp packages/frontend/board/env.template packages/frontend/board/.env.local
     cp packages/backend/server/env.local.template packages/backend/server/.env.local
     cp packages/backend/server/env.test.template packages/backend/server/.env.test
-    # cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
+    cp packages/backend/server/env.compose.template packages/backend/server/.env.compose
     cp env.template .env
 }
 
