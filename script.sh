@@ -167,6 +167,7 @@ setupDB() {
 
 removeTemporaryFiles() {
     rm ~/.env.local
+    rm script.sh
 
     # Discard .yarnrc changes
     git stash -u
