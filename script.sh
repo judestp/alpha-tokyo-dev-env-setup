@@ -161,17 +161,17 @@ installProjectPackages() {
 }
 
 setupDB() {
-    cd ~/$PROJECT_DIRECTORY/packages/backend/server
-    yarn db:migrate:local
+    cd ~/$PROJECT_DIRECTORY/packages/backend/server && yarn db:migrate:local
 }
 
 cleanup() {
-    cd ~
+    cd ~/$PROJECT_DIRECTORY
 
+    # Remove temporary installation files
     rm ~/.env.local
-    rm script.sh
+    rm ~/script.sh
 
-    # Discard .yarnrc changes
+    # Remove migration files
     git stash -u
 }
 
