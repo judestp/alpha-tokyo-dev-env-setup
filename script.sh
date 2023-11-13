@@ -117,6 +117,7 @@ setEnvs() {
 replaceMockWithAPI() {
     cd ~/$PROJECT_DIRECTORY/packages/frontend/student
 
+    local fileName=".env.local"
     local stringToRemove="mock/v1"
     local replacement="api/v1"
 
@@ -124,9 +125,9 @@ replaceMockWithAPI() {
     local tempFile="tempfile.txt"
 
     # Use sed to remove the specified string from the file and save the stringToRemove in the temp file
-    sed -e "s%\($stringToRemove\)%$replacement%g" ".env.local" >"$tempFile"
+    sed -e "s%\($stringToRemove\)%$replacement%g" "$fileName" >"$tempFile"
     # Replace the original file with the temp file
-    mv "$tempFile" ".env.local"
+    mv "$tempFile" "$fileName"
 }
 
 dockerize() {
