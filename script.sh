@@ -76,6 +76,8 @@ SMTP_HOST=mail
 SMTP_PORT=1025
 SMTP_USER_NAME=
 SMTP_PASSWORD=
+CONTACT_EMAIL_SENDER=sender@example.com
+CONTACT_EMAIL_RECEIVER=receiver@example.com
 EOF
     )
 
